@@ -3,6 +3,8 @@
 
 [HBM scan](https://github.com/HBM/scan-spec) implemented in Go. Results are served via JSON to a frontend written in React. All you need is a web browser.
 
+Check the [releases page](https://github.com/HBM/go-scan/releases) for precompiled executables.
+
 ## Goal
 
 1. A single binary for multiple platforms (Windows, Linux, Mac)
