@@ -2,3 +2,7 @@
 node_modules/
 statik/
 public/main.js
+scan
+scan32.exe
+scan64.exe
+scan_mac
