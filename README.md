@@ -17,7 +17,7 @@ The app is written in Go.
 
 One goroutine starts a simple HTTP web server and serves all files from the `/public` folder. When `mode` is set to production all files from the `/public` folder are embedded into the Go executable using [statik](https://github.com/rakyll/statik). The web server also provides a `/json` endpoint for the frontend.
 
-A second goroutine starts an infinte loop and listens for incoming UDP messages. All raw JSON messages are converted into proper types/struct and stored in an in-memory database. If devices stop announcing themselves they are removed from the database.
+A second goroutine starts an infinite loop and listens for incoming UDP messages. All raw JSON messages are converted into proper types/struct and stored in an in-memory database. If devices stop announcing themselves they are removed from the database.
 
 Start the app in development mode by using the following two commands. First of all transpile and bundle the JavaScript code.
 
