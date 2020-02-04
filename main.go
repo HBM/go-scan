@@ -10,9 +10,9 @@ import (
 	"sync"
 	"time"
 
+	_ "github.com/hbm/go-scan/statik"
 	"github.com/pkg/browser"
 	"github.com/rakyll/statik/fs"
-	_ "github.com/zemirco/hbm-scan/statik"
 )
 
 func NewDB() *DB {
