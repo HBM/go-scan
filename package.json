@@ -1,29 +1,33 @@
 {
   "name": "go-scan",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "contributors": [
+    "Fahri Sönmez <fahri.soenmez@hbkworld.com>",
+    "Florian Schopp <florian.schopp@hbkworld.com>",
+    "Mirco Zeiss (up to 9.2020)"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "watch": "webpack --watch --progress",
-    "prettier": "prettier --write \"./**/*.js\""
-  },
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "build": "rollup -c && make release",
+    "dev": "rollup -c -w",
+    "go:dev": "make dev",
+    "prettier": "prettier --write \"./**/*.{js,jsx,ts,tsx,json,html}\" ",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "prettier": "1.14.0",
-    "webpack": "^4.16.4",
-    "webpack-cli": "^3.1.0"
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-typescript": "^8.0.0",
+    "@tsconfig/svelte": "^2.0.0",
+    "prettier": "^2.7.1",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0",
+    "svelte-check": "^2.0.0",
+    "svelte-preprocess": "^4.0.0",
+    "tslib": "^2.0.0",
+    "typescript": "^4.0.0"
   }
 }

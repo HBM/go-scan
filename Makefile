@@ -4,8 +4,7 @@ statik:
 	statik -src=public
 
 dev:
-	go run main.go --mode=development
-
+	go run main.go 
 linux:
 	go build -o scan
 
@@ -18,4 +17,4 @@ win32:
 mac:
 	GOOS=darwin GOARCH=amd64 go build -o scan_mac
 
-release: statik linux win64 win32 mac
+release: linux win64 win32 mac
