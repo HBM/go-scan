@@ -10,9 +10,7 @@ import (
 	"sync"
 	"time"
 
-	// _ "github.com/hbm/go-scan/statik"
 	"github.com/pkg/browser"
-	"github.com/rakyll/statik/fs"
 )
 
 func NewDB() *DB {
@@ -83,7 +81,6 @@ type Device struct {
 
 func main() {
 
-	mode := flag.String("mode", "development", "switch between local file system and embedded one.")
 	flag.Parse()
 
 	db := NewDB()
@@ -100,16 +97,10 @@ func main() {
 	defer conn.Close()
 
 	// add file server
-	if *mode == "production" {
-		statikFS, err := fs.New()
-		if err != nil {
-			panic(err)
-		}
-		http.Handle("/", http.FileServer(statikFS))
-	} else {
-		fmt.Println("HBM scan: serving files from local file system")
-		http.Handle("/", http.FileServer(http.Dir("public")))
-	}
+	
+	fmt.Println("HBM scan: serving files from local file system")
+	http.Handle("/", http.FileServer(http.Dir("public")))
+
 
 	http.HandleFunc("/json", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")

@@ -32,7 +32,6 @@
 		if(res.status<300)return res.json()
 		throw new Error("Could not reach server. Retrying in 1 second")	
 	  }).then((data:Record<string,any>)=>{
-		
 		const newEntries = Object.entries(data)
       	.filter(([_ip,entry]) => {
 		return Object.entries(filter).every(([key,value])=>{
@@ -46,7 +45,6 @@
 	  })
       .sort(compare)
       entries = [...newEntries] 
-
       })
     }
 
@@ -73,7 +71,7 @@
 		<h2>Filter</h2>
 		{#each Object.values(keys).filter((el)=>typeof(el)==="string") as key,i}
 			<div class="filterDiv">
-				<label for={`filter${i}`} style="width:400px">{key}</label>
+				<label for={`filter${i}`}>{key}</label>
 				<input id={`filter${i}`} type="text" name="filter" on:change={(ev)=>onChange(key,ev)} />
 			</div>
 		{/each}
@@ -104,7 +102,7 @@
 
 <style>
 .filterDiv{
-	width: 300px;
+	width: 400px;
     display: flex;
     justify-content: space-between;
 }

@@ -1,7 +1,11 @@
 {
-  "name": "svelte-app",
+  "name": "go-scan",
   "version": "1.0.0",
-  "private": true,
+  "contributors": [
+    "Fahri Sönmez <fahri.soenmez@hbkworld.com>",
+    "Florian Schopp <florian.schopp@hbkworld.com>",
+    "Mirco Zeiss (up to 9.2020)"
+  ],
   "scripts": {
     "build": "rollup -c && make release",
     "dev": "rollup -c -w",

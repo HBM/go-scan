@@ -4,8 +4,7 @@ statik:
 	statik -src=public
 
 dev:
-	go run main.go --mode=development
-
+	go run main.go 
 linux:
 	go build -o scan
 
