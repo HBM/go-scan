@@ -10,7 +10,7 @@ import (
 	"sync"
 	"time"
 
-	_ "github.com/hbm/go-scan/statik"
+	// _ "github.com/hbm/go-scan/statik"
 	"github.com/pkg/browser"
 	"github.com/rakyll/statik/fs"
 )
@@ -83,7 +83,7 @@ type Device struct {
 
 func main() {
 
-	mode := flag.String("mode", "production", "switch between local file system and embedded one.")
+	mode := flag.String("mode", "development", "switch between local file system and embedded one.")
 	flag.Parse()
 
 	db := NewDB()
