@@ -72,24 +72,18 @@
 	<div>
 		<h2>Filter</h2>
 		{#each Object.values(keys).filter((el)=>typeof(el)==="string") as key,i}
-		<div class="filterDiv">
-			<label for={`filter${i}`} style="width:400px">{key}</label>
-			<input id={`filter${i}`} type="text" name="filter" on:change={(ev)=>onChange(key,ev)} />
-		</div>
-		
+			<div class="filterDiv">
+				<label for={`filter${i}`} style="width:400px">{key}</label>
+				<input id={`filter${i}`} type="text" name="filter" on:change={(ev)=>onChange(key,ev)} />
+			</div>
 		{/each}
-			  
-
-		
 		<table>
 		  <thead>
 			<tr>
 			  <th />
-			  {#each Object.values(keys).filter((el)=>typeof(el)==="string") as key}
-			  <th>{key}</th>
+				{#each Object.values(keys).filter((el)=>typeof(el)==="string") as key}
+					<th>{key}</th>
 				{/each}
-			  
-			
 			  <th>Website</th>
 			</tr>
 		  </thead>
@@ -98,10 +92,9 @@
 				<tr >
 					<td class="index">#{i + 1}</td>
 					{#each Object.values(keys).filter((el)=>typeof(el)==="string") as key}
-					<td>{entry.params.device[key]}</td>
+						<td>{entry.params.device[key]}</td>
 					{/each}
-				  
-				  <td><a href={entry.website}>{entry.website}</a></td>
+					<td><a href={entry.website}>{entry.website}</a></td>
 				</tr>
 			{/each}
 		  </tbody>

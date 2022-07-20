@@ -1,7 +1,6 @@
 
 node_modules/
-statik/
-public/main.js
+public/bundle*
 scan
 scan32.exe
 scan64.exe
